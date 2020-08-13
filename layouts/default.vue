@@ -1,55 +1,91 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="home">
+    <div class="navbar-wrapper">
+      <div class="nav-title">xportal</div>
+      <div class="nav-menu">
+        <ul>
+          <li class="float-left m-1">
+            <a href="#">aaa</a>
+          </li>
+          <li class="float-left m-1"><a href="#">bbb</a></li>
+          <li class="float-left m-1"><a href="#">ccc</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="profile"></div>
+      <div class="main-content">
+        <Nuxt></Nuxt>
+      </div>
+      <div class="toolbar"></div>
+      <div class="clear"></div>
+    </div>
+    <div class="footer-wrapper"></div>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+<style scoped>
+body {
   margin: 0;
+  padding: 0;
+}
+.home {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.navbar-wrapper {
+  height: 100px;
+  width: 100%;
+}
+.main-wrapper {
+  flex: 1;
+}
+.footer-wrapper {
+  margin-top: 15px;
+  height: 50px;
+  width: 100%;
+  background-color: #42b983;
+}
+.profile {
+  margin-top: 5px;
+  margin-left: 100px;
+  height: 500px;
+  width: 200px;
+  float: left;
+  background-color: #42b983;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.main-content {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 900px;
+  float: left;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.toolbar {
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 500px;
+  width: 200px;
+  float: left;
+  background-color: #42b983;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.clear {
+  clear: both;
 }
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.nav-title {
+  float: left;
+  height: 100%;
+  line-height: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+.nav-menu {
+  float: right;
+  height: 100%;
+  padding: 20px;
 }
 </style>

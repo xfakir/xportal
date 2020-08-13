@@ -9,6 +9,10 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'server',
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    NODE_ENV: process.env.NODE_ENV,
+  },
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -34,7 +38,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [{ src: './directive/highlight', ssr: false }],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -52,10 +56,38 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/axios', '@nuxtjs/proxy'],
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  axios: {
+    proxy: true,
+    prefix: '/api/',
+    credentials: true,
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  proxy: {
+    '/api/': {
+      target: process.env.BASE_URL, // 这个网站是开源的可以请求到数据的
+      pathRewrite: {
+        '^/api/': '/',
+        changeOrigin: true,
+      },
+    },
+  },
+
+  build: {
+    extend(config, ctx) {
+      if (ctx.dev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+        })
+      }
+    },
+  },
 }
