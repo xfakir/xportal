@@ -1,11 +1,8 @@
 <template>
-  <!--eslint-disable-next-line-->
   <div>
     <div>
+      <!--eslint-disable-next-line-->
       <div class="markdown-body" v-html="article"></div>
-      <div>
-        <img src="http://kodo.xfakir.cn/test.png" alt="" />
-      </div>
     </div>
   </div>
 </template>
@@ -13,13 +10,17 @@
 <script>
 import marked from 'marked'
 import 'github-markdown-css/github-markdown.css'
+import highlight from 'highlight.js'
 export default {
   name: 'Id',
   components: {},
   async asyncData({ app, params }) {
-    const res = await app.$axios.get('/article/' + params.id)
+    const res = await app.$axios.get('/article/id/' + params.id)
     marked.setOptions({
       renderer: new marked.Renderer(),
+      highlight(code) {
+        return highlight.highlightAuto(code).value
+      },
       gfm: true,
       tables: true,
       breaks: false,

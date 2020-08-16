@@ -33,12 +33,15 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/css/iconfont.css', '@/assets/css/global.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: './directive/highlight', ssr: false }],
+  plugins: [
+    { src: './directive/highlight', ssr: false },
+    { src: '@/assets/js/iconfont.js', ssr: false },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

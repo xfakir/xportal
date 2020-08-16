@@ -13,11 +13,11 @@
       </div>
     </div>
     <div class="main-wrapper">
-      <div class="profile"></div>
+      <profile class="profile"></profile>
       <div class="main-content">
         <Nuxt></Nuxt>
       </div>
-      <div class="toolbar"></div>
+      <toolbar class="toolbar"></toolbar>
       <div class="clear"></div>
     </div>
     <div class="footer-wrapper"></div>
@@ -48,12 +48,12 @@ body {
   background-color: #42b983;
 }
 .profile {
+  @apply border-2 border-blue-500 border-opacity-75;
   margin-top: 5px;
   margin-left: 100px;
   height: 500px;
-  width: 200px;
+  width: 240px;
   float: left;
-  background-color: #42b983;
 }
 
 .main-content {
@@ -67,9 +67,8 @@ body {
   margin-top: 5px;
   margin-left: 5px;
   height: 500px;
-  width: 200px;
+  width: 240px;
   float: left;
-  background-color: #42b983;
 }
 
 .clear {
@@ -89,3 +88,10 @@ body {
   padding: 20px;
 }
 </style>
+<script>
+import Profile from '../components/Profile/Profile'
+import Toolbar from '../components/Toolbar/Toolbar'
+export default {
+  components: { Toolbar, Profile },
+}
+</script>

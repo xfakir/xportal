@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-.x-card:hover {
-  @apply shadow-2xl;
+.x-card {
+  @apply shadow-2xl rounded;
 }
 </style>
