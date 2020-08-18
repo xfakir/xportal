@@ -61,7 +61,6 @@ export default {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  background-color: #7f828b;
 }
 .avatar img {
   @apply rounded-full;

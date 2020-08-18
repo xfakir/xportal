@@ -20,7 +20,7 @@
       <toolbar class="toolbar"></toolbar>
       <div class="clear"></div>
     </div>
-    <div class="footer-wrapper"></div>
+    <xfooter class="footer-wrapper"></xfooter>
   </div>
 </template>
 
@@ -30,25 +30,23 @@ body {
   padding: 0;
 }
 .home {
-  display: flex;
   min-height: 100vh;
-  flex-direction: column;
 }
 .navbar-wrapper {
-  height: 100px;
+  height: 90px;
   width: 100%;
+  border-bottom: #e0e0e0 1px solid;
 }
 .main-wrapper {
-  flex: 1;
+  margin-top: 10px;
 }
 .footer-wrapper {
   margin-top: 15px;
-  height: 50px;
+  height: 100px;
   width: 100%;
-  background-color: #42b983;
+  border-top: #e0e0e0 1px solid;
 }
 .profile {
-  @apply border-2 border-blue-500 border-opacity-75;
   margin-top: 5px;
   margin-left: 100px;
   height: 500px;
@@ -91,7 +89,8 @@ body {
 <script>
 import Profile from '../components/Profile/Profile'
 import Toolbar from '../components/Toolbar/Toolbar'
+import Xfooter from '../components/Xfooter/Xfooter'
 export default {
-  components: { Toolbar, Profile },
+  components: { Xfooter, Toolbar, Profile },
 }
 </script>

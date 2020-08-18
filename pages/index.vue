@@ -1,5 +1,10 @@
 <template>
-  <div class="container">
+  <div
+    v-infinite-scroll="loadMore"
+    class="container"
+    infinite-scroll-disabled="false"
+    infinite-scroll-distance="10"
+  >
     <article-card
       v-for="(article, index) in list"
       :key="index"
@@ -26,6 +31,9 @@ export default {
       this.$axios.get('/test/noparams').then((res) => {
         console.log(res.data)
       })
+    },
+    loadMore() {
+      alert('触发loadMore，请求下一页的信息')
     },
   },
 }

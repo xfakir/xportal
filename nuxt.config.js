@@ -41,6 +41,7 @@ export default {
   plugins: [
     { src: './directive/highlight', ssr: false },
     { src: '@/assets/js/iconfont.js', ssr: false },
+    { src: './directive/infinite-scroll.js', ssr: false },
   ],
   /*
    ** Auto import components
