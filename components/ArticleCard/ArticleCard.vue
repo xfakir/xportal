@@ -9,7 +9,10 @@
           <div class="content-wrapper">{{ article.content }} ...</div>
         </div>
       </div>
-      <div class="img-box">bbb</div>
+      <div class="img-box">{{ article.articleId }}</div>
+      <div class="article-id" style="display: none;">
+        {{ article.articleId }}
+      </div>
     </xcard>
   </div>
 </template>
