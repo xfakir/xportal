@@ -3,7 +3,8 @@
     <div class="navbar-wrapper">
       <div class="nav-title">xportal</div>
       <div class="nav-menu">
-        <ul>
+        <xsearch></xsearch>
+        <ul class="nav-list">
           <li class="float-left m-1">
             <a href="#">aaa</a>
           </li>
@@ -84,6 +85,10 @@ body {
   float: right;
   height: 100%;
   padding: 20px;
+}
+
+.nav-list {
+  float: left;
 }
 </style>
 <script>

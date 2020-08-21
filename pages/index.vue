@@ -5,7 +5,7 @@
     infinite-scroll-disabled="switchForMore"
     infinite-scroll-distance="10"
   >
-    <button @click="test()">aaa</button>
+    <nuxt-link to="/test">test</nuxt-link>
     <article-card
       v-for="(article, index) in $store.state.articleList"
       :key="index"
