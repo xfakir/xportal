@@ -1,5 +1,8 @@
 <template>
   <div class="Toolbar">
+    <xcard class="date-card">
+      
+    </xcard>
     <xcard class="tool-card">
       <div class="title">
         title
@@ -76,6 +79,7 @@ export default {
 </script>
 
 <style scoped>
+.date-card,
 .tool-card {
   padding: 10px;
 }
